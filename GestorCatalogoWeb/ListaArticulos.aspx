@@ -4,6 +4,8 @@
     <main aria-labelledby="title">
         <h2 id="title"><%: Title %>.</h2>
         <hr />
+        <h3>ACA VA EL FILTRO</h3>
+     
 
         <asp:GridView ID="dgvArticulos" runat="server" CssClass="table table-bordered table-striped" DataKeyNames="Id" AutoGenerateColumns="false">
             <Columns>

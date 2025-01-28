@@ -15,8 +15,14 @@ namespace GestorCatalogoWeb
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
-            List<Articulo> listaArticulos = articuloNegocio.listarArticulosConSP();
+            List<Articulo> listaArticulos = articuloNegocio.listarArticulos();
 
+            //minimamente ordenado
+            listaArticulos.Sort((a, b) => a.Codigo.CompareTo(b.Codigo));
+            listaArticulos.Sort((a, b) => a.Marca.Descripcion.CompareTo(b.Marca.Descripcion));
+            listaArticulos.Sort((a,b) => a.Categoria.Descripcion.CompareTo(b.Categoria.Descripcion));
+            
+            
             dgvArticulos.DataSource = listaArticulos;
             dgvArticulos.DataBind();
         }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AccesoDatos;
+using Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,8 +11,20 @@ namespace GestorCatalogoWeb
 {
     public partial class _Default : Page
     {
+        public List<Articulo> ListaArticulos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+
+            List<Articulo> listaArticulos = articuloNegocio.listarArticulos();
+
+            //minimamente ordenado
+            listaArticulos.Sort((a, b) => a.Codigo.CompareTo(b.Codigo));
+            listaArticulos.Sort((a, b) => a.Marca.Descripcion.CompareTo(b.Marca.Descripcion));
+            listaArticulos.Sort((a, b) => a.Categoria.Descripcion.CompareTo(b.Categoria.Descripcion));
+
+            ListaArticulos = listaArticulos;
+
 
         }
     }
