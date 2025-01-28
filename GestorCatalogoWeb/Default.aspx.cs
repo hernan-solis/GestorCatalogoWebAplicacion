@@ -25,6 +25,23 @@ namespace GestorCatalogoWeb
 
             ListaArticulos = listaArticulos;
 
+            if (!IsPostBack) 
+            {
+                repRepeater.DataSource = listaArticulos;
+                repRepeater.DataBind();
+            }
+            
+
+
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            string pokemonId = ((Button)sender).CommandArgument;
+
+            Session.Add("pokemonId", pokemonId);
+            
+            Response.Redirect("Edicion.aspx",false);
 
         }
     }

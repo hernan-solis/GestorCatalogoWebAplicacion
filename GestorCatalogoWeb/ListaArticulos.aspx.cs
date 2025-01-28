@@ -26,5 +26,13 @@ namespace GestorCatalogoWeb
             dgvArticulos.DataSource = listaArticulos;
             dgvArticulos.DataBind();
         }
+
+        protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+            Response.Redirect("Edicion.aspx");
+
+        }
     }
 }
