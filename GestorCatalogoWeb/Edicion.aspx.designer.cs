@@ -42,22 +42,31 @@ namespace GestorCatalogoWeb
         protected global::System.Web.UI.WebControls.TextBox tbxDescripcion;
 
         /// <summary>
-        /// tbxMarca control.
+        /// ddlMarca control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxMarca;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMarca;
 
         /// <summary>
-        /// tbxCategoria control.
+        /// ddlCategoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxCategoria;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategoria;
+
+        /// <summary>
+        /// tbxImagenUrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxImagenUrl;
 
         /// <summary>
         /// tbxPrecio control.

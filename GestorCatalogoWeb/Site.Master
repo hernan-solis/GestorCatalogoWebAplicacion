@@ -39,7 +39,7 @@
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" runat="server" href="~/">Gestor de Catalogo</a>
+                <a class="navbar-brand" runat="server" href="~/">Gestor de Catálogo</a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -47,7 +47,7 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/ListaArticulos">Lista de Articulos</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/ListaArticulos">Lista</a></li>
                         <li class="nav-item"><a class="nav-link" target="_blank" href="https://hernansolis.com/">Contacto</a></li>
                     </ul>
                 </div>
@@ -57,7 +57,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
+            <footer class="d-flex justify-content-center align-items-center">
                 <p>&copy; <%: DateTime.Now.Year %> - Hernán Solis - Gestor de Catalogo</p>
             </footer>
         </div>

@@ -3,11 +3,12 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <main>
-        <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">Gestor de Catalogo</h1>
-            <hr />
-            <p class="lead">ACA VA EL FILTRO</p>
-        </section>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <h2 id="aspnetTitle">Catálogo</h2>
+        </div>
+        <hr />
+        <p class="lead">ACA VA EL FILTRO</p>
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <%--ARJETAS CON FOREACH
@@ -38,7 +39,7 @@
                 <ItemTemplate>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="<%#Eval("ImagenUrl") %>" alt="<%#Eval("Nombre")%>" class="card-img-top img-fluid" style=" object-fit: contain; height: 500px;">
+                            <img src="<%#Eval("ImagenUrl") %>" alt="<%#Eval("Nombre")%>" class="card-img-top img-fluid" style="object-fit: contain; height: 500px;">
                             <div class="card-body">
                                 <h5 class="card-title"><%#Eval("Nombre")%></h5>
                                 <h6 class="card-subtitle mb-2 text-muted"><%#Eval("Marca.Descripcion") %></h6>

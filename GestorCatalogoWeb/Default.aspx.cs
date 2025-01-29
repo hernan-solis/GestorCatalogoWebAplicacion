@@ -14,6 +14,25 @@ namespace GestorCatalogoWeb
         public List<Articulo> ListaArticulos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            CargaInicial();
+            
+
+
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            string idArticulo = ((Button)sender).CommandArgument;
+
+            Session.Add("listaArticulos",ListaArticulos);
+            Session.Add("idArticulo", idArticulo);
+            
+            Response.Redirect("Edicion.aspx",false);
+
+        }
+
+        protected void CargaInicial()
+        {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
             List<Articulo> listaArticulos = articuloNegocio.listarArticulos();
@@ -25,24 +44,11 @@ namespace GestorCatalogoWeb
 
             ListaArticulos = listaArticulos;
 
-            if (!IsPostBack) 
+            if (!IsPostBack)
             {
                 repRepeater.DataSource = listaArticulos;
                 repRepeater.DataBind();
             }
-            
-
-
-        }
-
-        protected void btnEditar_Click(object sender, EventArgs e)
-        {
-            string pokemonId = ((Button)sender).CommandArgument;
-
-            Session.Add("pokemonId", pokemonId);
-            
-            Response.Redirect("Edicion.aspx",false);
-
         }
     }
 }

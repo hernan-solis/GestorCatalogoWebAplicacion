@@ -13,26 +13,36 @@ namespace GestorCatalogoWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            if (!IsPostBack)
+                CargaInicial(dgvArticulos);
 
-            List<Articulo> listaArticulos = articuloNegocio.listarArticulos();
 
-            //minimamente ordenado
-            listaArticulos.Sort((a, b) => a.Codigo.CompareTo(b.Codigo));
-            listaArticulos.Sort((a, b) => a.Marca.Descripcion.CompareTo(b.Marca.Descripcion));
-            listaArticulos.Sort((a,b) => a.Categoria.Descripcion.CompareTo(b.Categoria.Descripcion));
-            
-            
-            dgvArticulos.DataSource = listaArticulos;
-            dgvArticulos.DataBind();
+
+
         }
 
         protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
+
+            string idArticuloSeleccionado; 
 
             Response.Redirect("Edicion.aspx");
 
         }
+
+        protected void CargaInicial(GridView dgvArticulos) 
+        {
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+
+            List<Articulo> listaArticulos = articuloNegocio.listarArticulos();
+
+            // carga de lista y ordena por codigo
+            listaArticulos.Sort((a, b) => a.Codigo.CompareTo(b.Codigo));
+
+            dgvArticulos.DataSource = listaArticulos;
+            dgvArticulos.DataBind();
+        }
+
     }
 }

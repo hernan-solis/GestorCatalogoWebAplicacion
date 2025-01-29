@@ -9,7 +9,7 @@ namespace AccesoDatos
 {
     public class MarcaNegocio
     {
-        public List<Marca> listarMarca() 
+        public List<Marca> ListarMarca() 
         {
             List<Marca> listaMarca = new List<Marca>();
             AccesoDatos accesoDatos = new AccesoDatos();
@@ -46,7 +46,7 @@ namespace AccesoDatos
 
             return listaMarca;
         }
-        public List<Marca> filtrarMarca(String cadena)
+        public List<Marca> FiltrarMarca(String cadena)
         {
             List<Marca> listaMarca = new List<Marca>();
             AccesoDatos accesoDatos = new AccesoDatos();
@@ -83,7 +83,7 @@ namespace AccesoDatos
 
             return listaMarca;
         }
-        public void editarMarca(Marca marca, String Cadena) 
+        public void EditarMarca(Marca marca, String Cadena) 
         {
             List<Marca> listaMarca = new List<Marca>();
             AccesoDatos accesoDatos = new AccesoDatos();
@@ -103,7 +103,7 @@ namespace AccesoDatos
                 accesoDatos.cerrarConexion();
             }
         }
-        public void eliminarMarca(Marca marca)
+        public void EliminarMarca(Marca marca)
         {
            
             AccesoDatos accesoDatos = new AccesoDatos();
@@ -123,7 +123,7 @@ namespace AccesoDatos
                 accesoDatos.cerrarConexion();
             }
         }
-        public void agregarMarca(String cadena) 
+        public void AgregarMarca(String cadena) 
         {
             AccesoDatos accesoDatos = new AccesoDatos();
 
