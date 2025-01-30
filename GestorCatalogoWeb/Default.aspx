@@ -11,7 +11,7 @@
         <p class="lead">ACA VA EL FILTRO</p>
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            <%--ARJETAS CON FOREACH
+            <%--TARJETAS CON FOREACH
 
             <%
                 foreach (var item in ListaArticulos)

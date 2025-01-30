@@ -40,6 +40,8 @@ namespace GestorCatalogoWeb
             marcas = (marcas.OrderBy(marca => marca.Descripcion)).ToList();
 
             ddlMarca.DataSource = marcas;
+            ddlMarca.DataTextField = "Descripcion";
+            ddlMarca.DataValueField = "id";
             ddlMarca.DataBind();
 
 
@@ -52,12 +54,24 @@ namespace GestorCatalogoWeb
             categorias = (categorias.OrderBy(c => c.Descripcion)).ToList();
 
             ddlCategoria.DataSource = categorias;
+            ddlCategoria.DataTextField = "Descripcion";
+            ddlCategoria.DataValueField= "id";
             ddlCategoria.DataBind();
         }
 
         protected void CargaInicial()
         {
             CargarListas();
+
+            //oculta el buscador
+            if (Master != null)
+            {
+                Control tbxBuscadorPrincipal = Master.FindControl("tbxBuscadorPrincipal");
+                if (tbxBuscadorPrincipal != null)
+                {
+                    tbxBuscadorPrincipal.Visible = false;
+                }
+            }
 
             //setea lista y artSel
             if (Session["listaArticulos"] != null && Session["idArticulo"] != null)
